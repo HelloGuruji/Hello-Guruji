@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Find a Tutor | Hello Guruji</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f7fb;
+padding:30px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+height:90px;
+}
+
+h1{
+text-align:center;
+color:#0F2D52;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:35px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+label{
+display:block;
+font-weight:600;
+margin-bottom:8px;
+color:#0F2D52;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+border:1px solid #dcdcdc;
+border-radius:10px;
+font-size:15px;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+.full-width{
+grid-column:1/3;
+}
+
+.submit-btn{
+width:100%;
+background:#FF7A00;
+color:white;
+border:none;
+padding:15px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.note{
+background:#fff7ef;
+padding:15px;
+border-left:5px solid #FF7A00;
+margin-bottom:25px;
+border-radius:8px;
+}
+
+@media(max-width:768px){
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.full-width{
+grid-column:auto;
+}
+
+.container{
+padding:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<img src="logo.png" alt="Hello Guruji">
+</div>
+
+<h1>Find a Tutor</h1>
+
+<p class="subtitle">
+Tell us your requirement and we'll connect you with a suitable tutor.
+</p>
+
+<div class="note">
+Our team will review your requirement and try to arrange a suitable tutor demo within 24 hours.
+</div>
+
+<form>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Parent Name *</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Mobile Number *</label>
+<input type="tel" required>
+</div>
+
+<div class="form-group">
+<label>Student Name *</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Class *</label>
+<select>
+<option>Select Class</option>
+<option>1-5</option>
+<option>6-8</option>
+<option>9-10</option>
+<option>11-12</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Subject Required *</label>
+<input type="text" placeholder="Math, Science, English">
+</div>
+
+<div class="form-group">
+<label>Preferred Mode *</label>
+<select>
+<option>Home Tuition</option>
+<option>Online Tuition</option>
+<option>Both</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>City *</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Monthly Budget</label>
+<input type="text" placeholder="₹2000 - ₹5000">
+</div>
+
+<div class="form-group full-width">
+<label>Location / Address *</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group full-width">
+<label>Additional Requirements</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group full-width">
+<button type="submit" class="submit-btn">
+Request a Tutor
+</button>
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
