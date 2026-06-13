@@ -144,28 +144,28 @@ Tell us your requirement and we'll connect you with a suitable tutor.
 Our team will review your requirement and try to arrange a suitable tutor demo within 24 hours.
 </div>
 
-<form>
+<form id="parentForm">
 
 <div class="form-grid">
 
 <div class="form-group">
 <label>Parent Name *</label>
-<input type="text" required>
+<input type="text" name="parentName" required>
 </div>
 
 <div class="form-group">
 <label>Mobile Number *</label>
-<input type="tel" required>
+<input type="tel" name="mobile" required>
 </div>
 
 <div class="form-group">
 <label>Student Name *</label>
-<input type="text" required>
+<input type="text" name="studentName" required>
 </div>
 
 <div class="form-group">
 <label>Class *</label>
-<select>
+<select name="className">
 <option>Select Class</option>
 <option>1-5</option>
 <option>6-8</option>
@@ -176,12 +176,12 @@ Our team will review your requirement and try to arrange a suitable tutor demo w
 
 <div class="form-group">
 <label>Subject Required *</label>
-<input type="text" placeholder="Math, Science, English">
+<input type="text" name="subject" placeholder="Math, Science, English">
 </div>
 
 <div class="form-group">
 <label>Preferred Mode *</label>
-<select>
+<select name="mode">
 <option>Home Tuition</option>
 <option>Online Tuition</option>
 <option>Both</option>
@@ -190,22 +190,22 @@ Our team will review your requirement and try to arrange a suitable tutor demo w
 
 <div class="form-group">
 <label>City *</label>
-<input type="text">
+<input type="text" name="city">
 </div>
 
 <div class="form-group">
 <label>Monthly Budget</label>
-<input type="text" placeholder="₹2000 - ₹5000">
+<input type="text" name="budget" placeholder="₹2000 - ₹5000">
 </div>
 
 <div class="form-group full-width">
 <label>Location / Address *</label>
-<textarea></textarea>
+<textarea name="address"></textarea>
 </div>
 
 <div class="form-group full-width">
 <label>Additional Requirements</label>
-<textarea></textarea>
+<textarea name="requirements"></textarea>
 </div>
 
 <div class="form-group full-width">
@@ -219,6 +219,51 @@ Request a Tutor
 </form>
 
 </div>
+
+<script>
+
+document.getElementById("parentForm").addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const data = {
+type:"parent",
+parentName:this.parentName.value,
+mobile:this.mobile.value,
+studentName:this.studentName.value,
+className:this.className.value,
+subject:this.subject.value,
+mode:this.mode.value,
+city:this.city.value,
+budget:this.budget.value,
+address:this.address.value,
+requirements:this.requirements.value
+};
+
+try{
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbzY8Jfmt04VMcBjM8NdttkfdyuDkbgDpvn1LOZVOsRj2Qc-bDjqdWHlA0ek8PD8unKX8w/exec",
+{
+method:"POST",
+body:JSON.stringify(data)
+}
+);
+
+alert("Tutor Request Submitted Successfully!");
+
+document.getElementById("parentForm").reset();
+
+}
+catch(error){
+
+alert("Submission Failed");
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
