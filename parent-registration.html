@@ -1,13 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Find a Tutor | Hello Guruji</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -122,8 +121,8 @@ padding:25px;
 }
 
 }
-
 </style>
+
 </head>
 
 <body>
@@ -165,8 +164,8 @@ Our team will review your requirement and try to arrange a suitable tutor demo w
 
 <div class="form-group">
 <label>Class *</label>
-<select name="className">
-<option>Select Class</option>
+<select name="className" required>
+<option value="">Select Class</option>
 <option>1-5</option>
 <option>6-8</option>
 <option>9-10</option>
@@ -176,7 +175,7 @@ Our team will review your requirement and try to arrange a suitable tutor demo w
 
 <div class="form-group">
 <label>Subject Required *</label>
-<input type="text" name="subject" placeholder="Math, Science, English">
+<input type="text" name="subject" required>
 </div>
 
 <div class="form-group">
@@ -190,17 +189,17 @@ Our team will review your requirement and try to arrange a suitable tutor demo w
 
 <div class="form-group">
 <label>City *</label>
-<input type="text" name="city">
+<input type="text" name="city" required>
 </div>
 
 <div class="form-group">
 <label>Monthly Budget</label>
-<input type="text" name="budget" placeholder="₹2000 - ₹5000">
+<input type="text" name="budget">
 </div>
 
 <div class="form-group full-width">
 <label>Location / Address *</label>
-<textarea name="address"></textarea>
+<textarea name="address" required></textarea>
 </div>
 
 <div class="form-group full-width">
@@ -246,17 +245,18 @@ await fetch(
 "https://script.google.com/macros/s/AKfycbzY8Jfmt04VMcBjM8NdttkfdyuDkbgDpvn1LOZVOsRj2Qc-bDjqdWHlA0ek8PD8unKX8w/exec",
 {
 method:"POST",
+mode:"no-cors",
 body:JSON.stringify(data)
 }
 );
 
 alert("Tutor Request Submitted Successfully!");
-
 document.getElementById("parentForm").reset();
 
 }
 catch(error){
 
+console.log(error);
 alert("Submission Failed");
 
 }
@@ -267,3 +267,4 @@ alert("Submission Failed");
 
 </body>
 </html>
+```
